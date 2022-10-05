@@ -1,0 +1,41 @@
+<style>
+    a{
+        color: {{ site.mainColor }};
+    }
+    .menu-panel, .submit, .menu, .banner, .page-404, .btn-thankyou{
+        background-color: {{ site.secondaryColor }} !important;
+    }
+
+    .submit{
+        border: 2px solid {{ site.secondaryColor }} !important;
+    }
+
+    .submit:hover{
+        border: 2px solid #ffffff !important;
+        background-color: {{ site.mainColor }} !important;
+    }
+
+    #breadcrumb, .hero .content, .menu-btn, .main-content, footer, .btn-404, .page-thankyou{
+        background-color: {{ site.mainColor }};
+    }
+
+    .close-btn{
+        color: {{ site.mainColor }};
+    }
+
+    .close-btn span:nth-child(2)::before, .close-btn span:nth-child(2)::after{
+        background-color: {{ site.mainColor }};
+    }
+
+    {% assign sorted_pages = site.pages | sort: 'order' %}
+    {% assign counter = 1 %}
+    {% for page in sorted_pages %}
+        {% if page.layout == 'landing' %}
+            .tile:nth-child({{ counter }} ):hover{
+                background-color: {{ page.hoverColor }}
+                {% assign counter = counter | plus: 1 %}
+            }
+        {% endif %}
+    {% endfor %}
+
+</style>

@@ -1,0 +1,12 @@
+<footer>
+    <nav>
+        <ul class="w-100 d-flex align-items-center justify-content-center">
+            {% assign sorted_pages = site.pages | sort: 'order' %}
+            {% for page in sorted_pages %}
+                {% if page.layout == 'page' %}
+                    <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </nav>
+</footer>

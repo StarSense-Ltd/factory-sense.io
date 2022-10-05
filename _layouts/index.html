@@ -1,0 +1,91 @@
+---
+permalink: /
+layout: index
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    {% include header.html %}
+    <body class="home">
+        <div id="all" class="d-flex flex-column">
+            <div id="content">
+                {% include menu.html %}
+                <div class="bg" style="background-image: url('{{ site.baseurl }}/{{ page.bgImage }}')"></div>
+                {% include menu-panel.html %}
+                <main class="home">
+                    <div class="hero d-flex align-items-center justify-content-center">
+                        <div class="content d-flex align-items-center justify-content-center">
+                            <div class="square">
+                                <img class="logo" src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.logoAlt }}">
+                                <img class="starsense" src="{{ site.baseurl }}/{{ site.starSenseLogo }}" alt="{{ site.starSenseLogoAlt }}">
+                            </div>
+                        </div>
+                        <img class="scroll" src="{{ site.baseurl }}/assets/images/scroll.svg" alt="scroll">
+                    </div>
+                    <div class="main-content d-flex justify-content-center mb">
+                        <div class="container text-center">
+                            <img loading="lazy" class="main-logo-small mb-big" src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.logoAlt }}">
+                            <div class="big-text">
+                                {{ content }}
+                            </div>
+                        </div>
+                    </div>
+                    <section class="main-content d-flex justify-content-center">
+                        <div class="container-small text-center">
+                            <img loading="lazy" class="main-logo-small mb-normal" src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.LogoAlt }}">
+                            <div class="big-title mb-big">
+                                <h1>{{ page.h1 }}</h1>
+                            </div>
+                            <div class="container-form text-left">
+                                <form method="post" action="{{ site.formAction }}">
+                                    <div class="mb-form-input">
+                                        <label>First Name</label>
+                                        <input type="text" name="first_name" placeholder="Your First Name" required>
+                                    </div>
+                                    <div class="mb-form-input">
+                                        <label>Last Name</label>
+                                        <input type="text" name="last_name" placeholder="Your Last Name" required>
+                                    </div>
+                                    <div class="mb-form-input">
+                                        <label>E-mail</label>
+                                        <input type="email" name="mail" placeholder="domain@email.com" required>
+                                    </div>
+                                    <div class="mb-form-input">
+                                        <label>Phone Number</label>
+                                        <input type="tel" name="phone" placeholder="+30 0000 000 000">
+                                    </div>
+                                    <h2>Please select all the ways you would like to hear from YachtSense:</h2>
+                                    <div class="mb-form-input d-flex checkboxes-wrapper">
+                                        <label class="checkbox d-flex align-items-center">
+                                            <input type="checkbox" name="Email">
+                                            Email
+                                        </label>
+                                        <label class="checkbox d-flex align-items-center">
+                                            <input type="checkbox" name="Direct Mail">
+                                            Direct Mail
+                                        </label>
+                                        <label class="checkbox d-flex align-items-center">
+                                            <input type="checkbox" name="SMS Viber">
+                                            SMS/Viber messages
+                                        </label>
+                                    </div>
+                                    <div class="mb-form-input d-flex checkboxes-wrapper">
+                                        <div class="g-recaptcha" data-sitekey="{{ site.recapchaSiteKey }}"></div>
+                                    </div>
+                                    <div class="unsubscribe mb-big">
+                                        You can unsubscribe at any time by clicking the link in the footer of our emails. For information about our privacy practices, please visit our website.
+                                    </div>
+                                    <input class="submit" type="submit" value="SUBMIT">
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+            </div>
+            {% include footer.html %}
+        </div>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <script src="{{ site.baseurl }}/assets/js/custom.js"></script>
+    </body>
+</html>
+

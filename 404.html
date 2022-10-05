@@ -1,0 +1,28 @@
+---
+permalink: /404.html
+title: 'Oops!'
+description: 'This page you requested could not be found.'
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    {% include header.html %}
+    <body class="page-404">
+        <div class="h-100 d-flex flex-column align-items-center justify-content-center wrapper-404">
+            <div class="container-full text-center">
+                <div class="mb-normal px-global">
+                    <h1>Oops!</h1>
+                    <span>This page you requested could not be found.</span>
+                </div>
+                <picture>
+                    <source srcset="{{ site.baseurl }}/assets/images/mobile.svg" media="(max-width: 991px)">
+                    <source srcset="{{ site.baseurl }}/assets/images/404.svg" media="(min-width: 992px)">
+                    <img class="mb-normal" src="{{ site.baseurl }}/assets/images/404.svg" alt="error 404">
+                </picture>
+                <div class="px-global">
+                    <a class="btn-404" href="{{ site.url }}">BACK TO HOME</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
